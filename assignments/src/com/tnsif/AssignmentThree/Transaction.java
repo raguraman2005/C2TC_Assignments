@@ -1,29 +1,21 @@
 package com.tnsif.AssignmentThree;
 
 public class Transaction {
-	private final double transactionFee = 10.0;
+    private final double transactionFee = 50.0;
 
-    // Final method to ensure consistent transaction process
-    public final void performTransaction(Account account, String type, double amount) {
-        System.out.println("\n--- Transaction Start ---");
+    public final void performTransaction(Account account, double amount, String type) {
+        System.out.println("Transaction initiated...");
 
-        switch (type.toLowerCase()) {
-            case "deposit":
-                account.deposit(amount);
-                account.withdraw(transactionFee);
-                System.out.println("Transaction fee ₹" + transactionFee + " applied.");
-                break;
-
-            case "withdraw":
-                account.withdraw(amount + transactionFee);
-                System.out.println("Transaction fee ₹" + transactionFee + " applied.");
-                break;
-
-            default:
-                System.out.println("Invalid transaction type!");
+        if (type.equalsIgnoreCase("deposit")) {
+            account.deposit(amount);
+        } else if (type.equalsIgnoreCase("withdraw")) {
+            account.withdraw(amount + transactionFee);
+        } else {
+            System.out.println("Invalid transaction type!");
+            return;
         }
 
-        System.out.println("Final Balance: ₹" + account.getBalance());
-        System.out.println("--- Transaction End ---\n");
+        System.out.println("Transaction Fee: " + transactionFee);
+        System.out.println("Updated Balance: " + account.getBalance());
     }
 }

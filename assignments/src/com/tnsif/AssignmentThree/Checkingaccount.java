@@ -1,31 +1,27 @@
 package com.tnsif.AssignmentThree;
 
 public class Checkingaccount extends Account {
-    private double overdraftLimit = 1000.0;
+    private double overdraftLimit = 2000;
 
-    public CheckingAccount(String name, double balance) {
+    public Checkingaccount(String name, double balance) {
         super(name, balance);
     }
 
-    @Override
     public void deposit(double amount) {
         balance += amount;
-        System.out.println("Deposited ₹" + amount + ". New Balance: ₹" + balance);
+        System.out.println("Deposited: " + amount);
     }
 
-    @Override
     public void withdraw(double amount) {
         if (balance + overdraftLimit >= amount) {
             balance -= amount;
-            System.out.println("Withdrawn ₹" + amount + ". New Balance: ₹" + balance);
+            System.out.println("Withdrawn: " + amount);
         } else {
-            System.out.println("Withdrawal exceeds overdraft limit!");
+            System.out.println("Overdraft limit exceeded!");
         }
     }
 
-    @Override
     public double getBalance() {
         return balance;
     }
-
 }

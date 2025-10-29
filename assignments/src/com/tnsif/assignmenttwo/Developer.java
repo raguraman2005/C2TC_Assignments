@@ -1,4 +1,4 @@
-package comtnsif.Assignmenttwo;
+package com.tnsif.assignmenttwo;
 
 public class Developer extends Employee {
     private String project;

@@ -1,4 +1,5 @@
 package com.tnsif.assignmentfour;
+
 public class Indigo implements Airfare {
     private Integer hours;
     private Double costPerHour;

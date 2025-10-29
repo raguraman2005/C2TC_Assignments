@@ -1,4 +1,4 @@
-package comtnsif.Assignmenttwo;
+package com.tnsif.assignmenttwo;
 
 public class Manager  extends Employee {
     private String department;

@@ -1,8 +1,6 @@
 package com.tnsif.assignmentfour;
 
-
-public class Airfare {
-	Double calculateAmount(); // abstract method
-    void display();    
-
+public interface Airfare {
+    Double calculateAmount();
+    void display();
 }

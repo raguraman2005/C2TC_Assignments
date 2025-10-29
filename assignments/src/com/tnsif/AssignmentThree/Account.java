@@ -1,25 +1,21 @@
 package com.tnsif.AssignmentThree;
 
-public class Account extends Bank {
-    protected String accountHolderName;
+public abstract class Account extends Bank {
+    protected String accountHolder;
     protected double balance;
 
-    // Constructor
-    public Account(String accountHolderName, double initialBalance) {
-        super(); // increments totalAccounts
-        this.accountHolderName = accountHolderName;
-        this.balance = initialBalance;
+    public Account(String accountHolder, double balance) {
+        super(); 
+        this.accountHolder = accountHolder;
+        this.balance = balance;
     }
 
-    // Abstract methods
     public abstract void deposit(double amount);
     public abstract void withdraw(double amount);
     public abstract double getBalance();
 
-    // Concrete method - display account details
-    public void displayAccountDetails() {
-        System.out.println("Account Holder: " + accountHolderName);
-        System.out.println("Current Balance: ₹" + balance);
+    public void displayAccountInfo() {
+        System.out.println("Account Holder: " + accountHolder);
+        System.out.println("Balance: " + balance);
     }
-
 }

@@ -1,30 +1,29 @@
 package com.tnsif.AssignmentThree;
+
 public class Savingsaccount extends Account {
-    private double interestRate = 0.03; // 3% interest rate
+    public Savingsaccount(String accountHolder, double balance) {
+		super(accountHolder, balance);
+		// TODO Auto-generated constructor stub
+	}
 
-    public SavingsAccount(String name, double balance) {
-        super(name, balance);
-    }
+	private double interestRate = 0.03;
 
-    @Override
+    
     public void deposit(double amount) {
         balance += amount + (amount * interestRate);
-        System.out.println("Deposited ₹" + amount + " with interest. New Balance: ₹" + balance);
+        System.out.println("Deposited with interest: " + amount);
     }
 
-    @Override
     public void withdraw(double amount) {
         if (balance >= amount) {
             balance -= amount;
-            System.out.println("Withdrawn ₹" + amount + ". New Balance: ₹" + balance);
+            System.out.println("Withdrawn: " + amount);
         } else {
             System.out.println("Insufficient balance!");
         }
     }
 
-    @Override
     public double getBalance() {
         return balance;
     }
-
 }

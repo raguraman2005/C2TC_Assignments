@@ -2,7 +2,7 @@ package com.tnsif.assignmentfour;
 
 import java.util.Scanner;
 
-public class Main {
+
 
 public class Main {
 	 public static void main(String[] args) {
@@ -33,5 +33,4 @@ public class Main {
 	        airfare.display(); // show total amount
 	        sc.close();
 	    }
-
 }
